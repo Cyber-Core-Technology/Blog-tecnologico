@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "الرئيسية"
+
+msgid "Artículos"
+msgstr "المقالات"
+
+msgid "Ciberseguridad"
+msgstr "الأمن السيبراني"
+
+msgid "Programación"
+msgstr "البرمجة"
+
+msgid "Buscar…"
+msgstr "بحث…"
+
+msgid "Buscar artículos…"
+msgstr "ابحث في المقالات…"
+
+msgid "Cambiar tema"
+msgstr "تبديل السمة"
+
+msgid "Menú"
+msgstr "القائمة"
+
+msgid "Idioma"
+msgstr "اللغة"
+
+msgid "Explorar artículos"
+msgstr "تصفح المقالات"
+
+msgid "Últimos artículos"
+msgstr "أحدث المقالات"
+
+msgid "Lo más reciente del blog."
+msgstr "أحدث ما في المدونة."
+
+msgid "Ver todos"
+msgstr "عرض الكل"
+
+msgid "No te pierdas nada"
+msgstr "لا تفوّت شيئًا"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "احصل على أحدث مقالات التقنية والأمن في بريدك."
+
+msgid "Suscribirme"
+msgstr "اشترك"
+
+msgid "Boletín"
+msgstr "النشرة البريدية"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "مقالات جديدة مباشرة إلى بريدك. بلا إزعاج، ألغِ الاشتراك متى شئت."
+
+msgid "Explorar"
+msgstr "استكشف"
+
+msgid "Todos los artículos"
+msgstr "كل المقالات"
+
+msgid "Todos"
+msgstr "الكل"
+
+msgid "Suscripción RSS"
+msgstr "تغذية RSS"
+
+msgid "Sin tracking de terceros"
+msgstr "بدون تتبع من جهات خارجية"
+
+msgid "Comentarios"
+msgstr "التعليقات"
+
+msgid "Deja un comentario"
+msgstr "اترك تعليقًا"
+
+msgid "Enviar comentario"
+msgstr "إرسال التعليق"
+
+msgid "Sé el primero en comentar."
+msgstr "كن أول من يعلّق."
+
+msgid "Se revisa antes de publicarse."
+msgstr "تتم المراجعة قبل النشر."
+
+msgid "Tu nombre"
+msgstr "اسمك"
+
+msgid "Escribe tu comentario…"
+msgstr "اكتب تعليقك…"
+
+msgid "Sigue leyendo"
+msgstr "تابع القراءة"
+
+msgid "Escrito por"
+msgstr "كتبه"
+
+msgid "Volver al inicio"
+msgstr "العودة إلى الرئيسية"
+
+msgid "min de lectura"
+msgstr "دقيقة قراءة"
+
+msgid "min"
+msgstr "دقيقة"
+

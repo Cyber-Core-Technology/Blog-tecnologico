@@ -1,0 +1,7 @@
+# =============================================================================
+#  Dependencias de producción
+# =============================================================================
+-r base.txt
+
+# Observabilidad básica (opcional, descomenta si usas Sentry)
+# sentry-sdk==2.19.2

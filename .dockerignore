@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets — never bake into the image
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node (installed during build stage)
+node_modules/
+tailwind/node_modules/
+
+# Local artifacts
+src/staticfiles/
+src/mediafiles/
+.collected-static/
+*.log
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Docs / planning
+*.md
+docker-compose.override.yml

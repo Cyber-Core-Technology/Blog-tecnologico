@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Startseite"
+
+msgid "Artículos"
+msgstr "Artikel"
+
+msgid "Ciberseguridad"
+msgstr "Cybersicherheit"
+
+msgid "Programación"
+msgstr "Programmierung"
+
+msgid "Buscar…"
+msgstr "Suchen…"
+
+msgid "Buscar artículos…"
+msgstr "Artikel suchen…"
+
+msgid "Cambiar tema"
+msgstr "Thema wechseln"
+
+msgid "Menú"
+msgstr "Menü"
+
+msgid "Idioma"
+msgstr "Sprache"
+
+msgid "Explorar artículos"
+msgstr "Artikel entdecken"
+
+msgid "Últimos artículos"
+msgstr "Neueste Artikel"
+
+msgid "Lo más reciente del blog."
+msgstr "Das Neueste aus dem Blog."
+
+msgid "Ver todos"
+msgstr "Alle ansehen"
+
+msgid "No te pierdas nada"
+msgstr "Verpasse nichts"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "Erhalte neue Technik- und Sicherheitsartikel per E-Mail."
+
+msgid "Suscribirme"
+msgstr "Abonnieren"
+
+msgid "Boletín"
+msgstr "Newsletter"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "Neue Artikel direkt in dein Postfach. Kein Spam, jederzeit abbestellbar."
+
+msgid "Explorar"
+msgstr "Entdecken"
+
+msgid "Todos los artículos"
+msgstr "Alle Artikel"
+
+msgid "Todos"
+msgstr "Alle"
+
+msgid "Suscripción RSS"
+msgstr "RSS-Feed"
+
+msgid "Sin tracking de terceros"
+msgstr "Kein Tracking durch Dritte"
+
+msgid "Comentarios"
+msgstr "Kommentare"
+
+msgid "Deja un comentario"
+msgstr "Hinterlasse einen Kommentar"
+
+msgid "Enviar comentario"
+msgstr "Kommentar senden"
+
+msgid "Sé el primero en comentar."
+msgstr "Sei der Erste, der kommentiert."
+
+msgid "Se revisa antes de publicarse."
+msgstr "Wird vor der Veröffentlichung geprüft."
+
+msgid "Tu nombre"
+msgstr "Dein Name"
+
+msgid "Escribe tu comentario…"
+msgstr "Schreibe deinen Kommentar…"
+
+msgid "Sigue leyendo"
+msgstr "Weiterlesen"
+
+msgid "Escrito por"
+msgstr "Geschrieben von"
+
+msgid "Volver al inicio"
+msgstr "Zurück zur Startseite"
+
+msgid "min de lectura"
+msgstr "Min. Lesezeit"
+
+msgid "min"
+msgstr "Min."
+

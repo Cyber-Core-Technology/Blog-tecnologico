@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Accueil"
+
+msgid "Artículos"
+msgstr "Articles"
+
+msgid "Ciberseguridad"
+msgstr "Cybersécurité"
+
+msgid "Programación"
+msgstr "Programmation"
+
+msgid "Buscar…"
+msgstr "Rechercher…"
+
+msgid "Buscar artículos…"
+msgstr "Rechercher des articles…"
+
+msgid "Cambiar tema"
+msgstr "Changer de thème"
+
+msgid "Menú"
+msgstr "Menu"
+
+msgid "Idioma"
+msgstr "Langue"
+
+msgid "Explorar artículos"
+msgstr "Explorer les articles"
+
+msgid "Últimos artículos"
+msgstr "Derniers articles"
+
+msgid "Lo más reciente del blog."
+msgstr "Les dernières nouveautés du blog."
+
+msgid "Ver todos"
+msgstr "Voir tout"
+
+msgid "No te pierdas nada"
+msgstr "Ne manquez rien"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "Recevez les nouveaux articles tech et sécurité dans votre boîte mail."
+
+msgid "Suscribirme"
+msgstr "S'abonner"
+
+msgid "Boletín"
+msgstr "Newsletter"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "De nouveaux articles directement dans votre boîte mail. Sans spam, désabonnez-vous quand vous voulez."
+
+msgid "Explorar"
+msgstr "Explorer"
+
+msgid "Todos los artículos"
+msgstr "Tous les articles"
+
+msgid "Todos"
+msgstr "Tous"
+
+msgid "Suscripción RSS"
+msgstr "Flux RSS"
+
+msgid "Sin tracking de terceros"
+msgstr "Sans pistage tiers"
+
+msgid "Comentarios"
+msgstr "Commentaires"
+
+msgid "Deja un comentario"
+msgstr "Laisser un commentaire"
+
+msgid "Enviar comentario"
+msgstr "Publier le commentaire"
+
+msgid "Sé el primero en comentar."
+msgstr "Soyez le premier à commenter."
+
+msgid "Se revisa antes de publicarse."
+msgstr "Vérifié avant publication."
+
+msgid "Tu nombre"
+msgstr "Votre nom"
+
+msgid "Escribe tu comentario…"
+msgstr "Écrivez votre commentaire…"
+
+msgid "Sigue leyendo"
+msgstr "Continuer la lecture"
+
+msgid "Escrito por"
+msgstr "Écrit par"
+
+msgid "Volver al inicio"
+msgstr "Retour à l'accueil"
+
+msgid "min de lectura"
+msgstr "min de lecture"
+
+msgid "min"
+msgstr "min"
+

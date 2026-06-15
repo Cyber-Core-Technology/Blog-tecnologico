@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "ホーム"
+
+msgid "Artículos"
+msgstr "記事"
+
+msgid "Ciberseguridad"
+msgstr "サイバーセキュリティ"
+
+msgid "Programación"
+msgstr "プログラミング"
+
+msgid "Buscar…"
+msgstr "検索…"
+
+msgid "Buscar artículos…"
+msgstr "記事を検索…"
+
+msgid "Cambiar tema"
+msgstr "テーマを切り替え"
+
+msgid "Menú"
+msgstr "メニュー"
+
+msgid "Idioma"
+msgstr "言語"
+
+msgid "Explorar artículos"
+msgstr "記事を見る"
+
+msgid "Últimos artículos"
+msgstr "最新の記事"
+
+msgid "Lo más reciente del blog."
+msgstr "ブログの最新情報。"
+
+msgid "Ver todos"
+msgstr "すべて見る"
+
+msgid "No te pierdas nada"
+msgstr "最新情報をお見逃しなく"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "最新のテクノロジーとセキュリティの記事をメールでお届けします。"
+
+msgid "Suscribirme"
+msgstr "登録する"
+
+msgid "Boletín"
+msgstr "ニュースレター"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "新着記事をメールで直接お届け。スパムなし、いつでも解除可能。"
+
+msgid "Explorar"
+msgstr "探す"
+
+msgid "Todos los artículos"
+msgstr "すべての記事"
+
+msgid "Todos"
+msgstr "すべて"
+
+msgid "Suscripción RSS"
+msgstr "RSS フィード"
+
+msgid "Sin tracking de terceros"
+msgstr "第三者トラッキングなし"
+
+msgid "Comentarios"
+msgstr "コメント"
+
+msgid "Deja un comentario"
+msgstr "コメントを書く"
+
+msgid "Enviar comentario"
+msgstr "コメントを送信"
+
+msgid "Sé el primero en comentar."
+msgstr "最初のコメントを書きましょう。"
+
+msgid "Se revisa antes de publicarse."
+msgstr "公開前に確認されます。"
+
+msgid "Tu nombre"
+msgstr "お名前"
+
+msgid "Escribe tu comentario…"
+msgstr "コメントを書く…"
+
+msgid "Sigue leyendo"
+msgstr "続きを読む"
+
+msgid "Escrito por"
+msgstr "著者"
+
+msgid "Volver al inicio"
+msgstr "ホームに戻る"
+
+msgid "min de lectura"
+msgstr "分で読めます"
+
+msgid "min"
+msgstr "分"
+

@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Artículos"
+msgstr "Artikelen"
+
+msgid "Ciberseguridad"
+msgstr "Cyberbeveiliging"
+
+msgid "Programación"
+msgstr "Programmeren"
+
+msgid "Buscar…"
+msgstr "Zoeken…"
+
+msgid "Buscar artículos…"
+msgstr "Artikelen zoeken…"
+
+msgid "Cambiar tema"
+msgstr "Thema wisselen"
+
+msgid "Menú"
+msgstr "Menu"
+
+msgid "Idioma"
+msgstr "Taal"
+
+msgid "Explorar artículos"
+msgstr "Artikelen verkennen"
+
+msgid "Últimos artículos"
+msgstr "Nieuwste artikelen"
+
+msgid "Lo más reciente del blog."
+msgstr "Het laatste van de blog."
+
+msgid "Ver todos"
+msgstr "Alles bekijken"
+
+msgid "No te pierdas nada"
+msgstr "Mis niets"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "Ontvang de nieuwste tech- en beveiligingsartikelen in je inbox."
+
+msgid "Suscribirme"
+msgstr "Abonneren"
+
+msgid "Boletín"
+msgstr "Nieuwsbrief"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "Nieuwe artikelen direct in je inbox. Geen spam, schrijf je uit wanneer je wilt."
+
+msgid "Explorar"
+msgstr "Verkennen"
+
+msgid "Todos los artículos"
+msgstr "Alle artikelen"
+
+msgid "Todos"
+msgstr "Alle"
+
+msgid "Suscripción RSS"
+msgstr "RSS-feed"
+
+msgid "Sin tracking de terceros"
+msgstr "Geen tracking van derden"
+
+msgid "Comentarios"
+msgstr "Reacties"
+
+msgid "Deja un comentario"
+msgstr "Laat een reactie achter"
+
+msgid "Enviar comentario"
+msgstr "Reactie plaatsen"
+
+msgid "Sé el primero en comentar."
+msgstr "Wees de eerste die reageert."
+
+msgid "Se revisa antes de publicarse."
+msgstr "Wordt gecontroleerd voor publicatie."
+
+msgid "Tu nombre"
+msgstr "Je naam"
+
+msgid "Escribe tu comentario…"
+msgstr "Schrijf je reactie…"
+
+msgid "Sigue leyendo"
+msgstr "Verder lezen"
+
+msgid "Escrito por"
+msgstr "Geschreven door"
+
+msgid "Volver al inicio"
+msgstr "Terug naar home"
+
+msgid "min de lectura"
+msgstr "min leestijd"
+
+msgid "min"
+msgstr "min"
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#0f0f11;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0f0f11;padding:32px 16px;">
+    <tr><td align="center">
+      <table role="presentation" width="100%" style="max-width:520px;background:#161619;border-radius:18px;overflow:hidden;border:1px solid #2c2c33;">
+        {# Cinta de marca: granate / acero #}
+        <tr><td style="height:5px;background:linear-gradient(90deg,#74202c 0%,#74202c 48%,#234d6a 52%,#234d6a 100%);font-size:0;line-height:0;">&nbsp;</td></tr>
+        <tr><td style="padding:36px 32px;">
+          <h1 style="margin:0 0 16px;color:#f4f3ef;font-size:22px;font-weight:700;">Confirma tu suscripción</h1>
+          <p style="margin:0 0 24px;color:#a3a3ab;font-size:15px;line-height:1.6;">
+            Recibimos una solicitud para suscribir <strong style="color:#e6e6e8;">{{ email }}</strong>
+            al boletín del <strong style="color:#5390b7;">CyCoTech Blog</strong>. Pulsa el botón para confirmarla.
+          </p>
+          <a href="{{ confirm_url }}"
+             style="display:inline-block;background:#234d6a;color:#f4f3ef;text-decoration:none;padding:13px 30px;border-radius:12px;font-weight:600;font-size:15px;">
+            Confirmar suscripción
+          </a>
+          <p style="margin:26px 0 0;color:#76767f;font-size:13px;line-height:1.6;">
+            Si el botón no funciona, copia este enlace:<br>
+            <a href="{{ confirm_url }}" style="color:#5390b7;word-break:break-all;">{{ confirm_url }}</a>
+          </p>
+          <p style="margin:24px 0 0;color:#54545d;font-size:12px;">Si no solicitaste esto, ignora este mensaje.</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Artículos"
+msgstr "Articles"
+
+msgid "Ciberseguridad"
+msgstr "Cybersecurity"
+
+msgid "Programación"
+msgstr "Programming"
+
+msgid "Buscar…"
+msgstr "Search…"
+
+msgid "Buscar artículos…"
+msgstr "Search articles…"
+
+msgid "Cambiar tema"
+msgstr "Toggle theme"
+
+msgid "Menú"
+msgstr "Menu"
+
+msgid "Idioma"
+msgstr "Language"
+
+msgid "Explorar artículos"
+msgstr "Explore articles"
+
+msgid "Últimos artículos"
+msgstr "Latest articles"
+
+msgid "Lo más reciente del blog."
+msgstr "The latest from the blog."
+
+msgid "Ver todos"
+msgstr "View all"
+
+msgid "No te pierdas nada"
+msgstr "Don't miss a thing"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "Get the latest tech and security articles in your inbox."
+
+msgid "Suscribirme"
+msgstr "Subscribe"
+
+msgid "Boletín"
+msgstr "Newsletter"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "New articles straight to your inbox. No spam, unsubscribe anytime."
+
+msgid "Explorar"
+msgstr "Explore"
+
+msgid "Todos los artículos"
+msgstr "All articles"
+
+msgid "Todos"
+msgstr "All"
+
+msgid "Suscripción RSS"
+msgstr "RSS feed"
+
+msgid "Sin tracking de terceros"
+msgstr "No third-party tracking"
+
+msgid "Comentarios"
+msgstr "Comments"
+
+msgid "Deja un comentario"
+msgstr "Leave a comment"
+
+msgid "Enviar comentario"
+msgstr "Post comment"
+
+msgid "Sé el primero en comentar."
+msgstr "Be the first to comment."
+
+msgid "Se revisa antes de publicarse."
+msgstr "Reviewed before publishing."
+
+msgid "Tu nombre"
+msgstr "Your name"
+
+msgid "Escribe tu comentario…"
+msgstr "Write your comment…"
+
+msgid "Sigue leyendo"
+msgstr "Keep reading"
+
+msgid "Escrito por"
+msgstr "Written by"
+
+msgid "Volver al inicio"
+msgstr "Back to home"
+
+msgid "min de lectura"
+msgstr "min read"
+
+msgid "min"
+msgstr "min"
+

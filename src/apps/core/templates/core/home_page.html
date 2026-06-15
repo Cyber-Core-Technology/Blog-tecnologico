@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block content %}
+{# ============================ HERO COLLAGE ============================ #}
+<section class="relative overflow-hidden">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-12 pt-14 lg:grid-cols-12 lg:pt-20">
+
+    {# ---- Texto ---- #}
+    <div class="lg:col-span-5">
+      <span class="badge-steel mb-5 inline-flex">
+        <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-steel-500"></span>
+        Tecnología · Seguridad · Código
+      </span>
+      <h1 class="font-display text-4xl font-extrabold leading-[1.04] tracking-tight text-ink-900 dark:text-white sm:text-5xl xl:text-6xl">
+        {{ page.title }}
+      </h1>
+      {% if page.subtitle %}
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink-500 dark:text-ink-300">{{ page.subtitle }}</p>
+      {% endif %}
+      {% if page.intro %}
+        <div class="prose prose-ink mt-3 dark:prose-invert">{{ page.intro|richtext }}</div>
+      {% endif %}
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="{{ page.hero_cta_link|default:'/blog/' }}" class="btn-primary px-7 py-3 text-base">
+          {% if page.hero_cta_text %}{{ page.hero_cta_text }}{% else %}{% translate "Explorar artículos" %}{% endif %}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <a href="/feed/" class="btn-ghost px-6 py-3 text-base">RSS</a>
+      </div>
+      {# Cinta tricolor de marca #}
+      <div class="mt-9 flex max-w-xs items-center gap-2">
+        <span class="h-1.5 flex-1 rounded-full bg-maroon-700"></span>
+        <span class="h-1.5 w-8 rounded-full bg-ink-300 dark:bg-ink-100"></span>
+        <span class="h-1.5 flex-1 rounded-full bg-steel-700"></span>
+      </div>
+    </div>
+
+    {# ---- Collage (bento) ---- #}
+    <div class="relative lg:col-span-7">
+      <div class="grid h-[26rem] grid-cols-6 grid-rows-6 gap-3 sm:h-[30rem]">
+
+        {# Destacado #}
+        {% with featured=latest_articles.0 %}
+        <a href="{% if featured %}{% pageurl featured %}{% else %}/blog/{% endif %}"
+           class="group relative col-span-4 row-span-4 overflow-hidden rounded-2xl ring-1 ring-ink-200/60 transition hover:ring-steel-400/60 dark:ring-ink-800">
+          {% if featured.cover_image %}
+            {% image featured.cover_image fill-800x800 as fc %}
+            <img src="{{ fc.url }}" alt="{{ featured.title }}" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          {% else %}
+            <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-maroon-700/40 via-ink-900 to-steel-700/40">
+              {% include "includes/logo.html" with logo_class="h-24 w-24 opacity-80" %}
+            </div>
+          {% endif %}
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-5">
+            {% if featured.category %}<span class="badge bg-maroon-700 text-paper">{{ featured.category.name }}</span>{% endif %}
+            <h2 class="mt-2 font-display text-lg font-bold leading-snug text-white sm:text-xl">{{ featured.title|default:"Próximamente: primeros artículos" }}</h2>
+          </div>
+          <span class="absolute right-3 top-3 badge bg-ink-950/60 text-paper backdrop-blur">★ Destacado</span>
+        </a>
+        {% endwith %}
+
+        {# Tile granate: Ciberseguridad #}
+        <a href="/blog/?categoria=ciberseguridad"
+           class="group relative col-span-2 row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-maroon-600 to-maroon-800 p-4 text-paper shadow-lg shadow-maroon-900/20">
+          <svg class="h-7 w-7 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7l8-4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+          <p class="absolute bottom-3 left-4 font-display text-sm font-bold">{% translate "Ciberseguridad" %}</p>
+          <span class="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-white/10 transition group-hover:scale-150"></span>
+        </a>
+
+        {# Tile acero: Programación #}
+        <a href="/blog/?categoria=programacion"
+           class="group relative col-span-2 row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-steel-600 to-steel-800 p-4 text-paper shadow-lg shadow-steel-900/20">
+          <svg class="h-7 w-7 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <p class="absolute bottom-3 left-4 font-display text-sm font-bold">{% translate "Programación" %}</p>
+          <span class="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-white/10 transition group-hover:scale-150"></span>
+        </a>
+
+        {# Mini terminal #}
+        <div class="col-span-3 row-span-2 overflow-hidden rounded-2xl border border-ink-800 bg-ink-900 p-3 shadow-lg">
+          <div class="mb-2 flex gap-1.5">
+            <span class="h-2.5 w-2.5 rounded-full bg-maroon-600/80"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-ink-500"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-steel-500/80"></span>
+          </div>
+          <pre class="overflow-hidden font-mono text-[11px] leading-relaxed"><span class="text-steel-400">$</span> <span class="text-ink-200">ufw</span> default deny
+<span class="text-steel-400">$</span> <span class="text-ink-200">ufw</span> allow <span class="text-maroon-300">22</span>/tcp
+<span class="text-steel-400">$</span> <span class="text-ink-200">ufw</span> enable <span class="text-emerald-400">✓</span>
+<span class="text-ink-500"># servidor asegurado</span></pre>
+        </div>
+
+        {# Tile marca #}
+        <div class="col-span-3 row-span-2 flex items-center gap-3 overflow-hidden rounded-2xl border border-ink-200/60 bg-white/70 p-4 backdrop-blur dark:border-ink-800 dark:bg-ink-900/60">
+          {% include "includes/logo.html" with logo_class="h-12 w-12 shrink-0" %}
+          <div class="min-w-0">
+            <p class="font-display text-sm font-bold text-ink-900 dark:text-white">CyCoTech Blog</p>
+            <p class="truncate text-xs text-ink-500 dark:text-ink-400">Sin tracking · Código propio</p>
+          </div>
+        </div>
+      </div>
+
+      {# Chips flotantes (profundidad) #}
+      <div class="absolute -left-3 top-1/2 hidden -translate-y-1/2 items-center gap-2 rounded-xl border border-ink-200/70 bg-white/80 px-3 py-2 shadow-xl backdrop-blur lg:flex dark:border-ink-700 dark:bg-ink-900/80">
+        <svg class="h-4 w-4 text-steel-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        <span class="text-xs font-semibold text-ink-700 dark:text-ink-200">Privado por diseño</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================ ÚLTIMOS ARTÍCULOS ============================ #}
+<section class="mx-auto max-w-6xl px-4 py-12">
+  <div class="mb-8 flex items-end justify-between gap-4">
+    <div>
+      <h2 class="font-display text-2xl font-bold text-ink-900 dark:text-white">{% translate "Últimos artículos" %}</h2>
+      <p class="mt-1 text-sm text-ink-500 dark:text-ink-400">{% translate "Lo más reciente del blog." %}</p>
+    </div>
+    <a href="/blog/" class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-steel-600 hover:text-steel-500 dark:text-steel-400 sm:inline-flex">
+      {% translate "Ver todos" %}
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  {% if latest_articles %}
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {% for article in latest_articles %}
+        {% include "blog/_article_card.html" with article=article %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="surface flex flex-col items-center gap-3 px-6 py-16 text-center">
+      {% include "includes/logo.html" with logo_class="h-12 w-12 opacity-60" %}
+      <p class="text-ink-500 dark:text-ink-400">Aún no hay artículos publicados. ¡Pronto habrá contenido!</p>
+    </div>
+  {% endif %}
+</section>
+
+{# ============================ CTA NEWSLETTER ============================ #}
+<section class="mx-auto max-w-6xl px-4 pb-8">
+  <div class="surface relative overflow-hidden px-6 py-12 text-center sm:px-12">
+    <div aria-hidden="true" class="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-steel-700/15 blur-3xl"></div>
+    <div aria-hidden="true" class="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-maroon-700/15 blur-3xl"></div>
+    <div class="relative mx-auto max-w-xl">
+      <h2 class="font-display text-2xl font-bold text-ink-900 dark:text-white sm:text-3xl">{% translate "No te pierdas nada" %}</h2>
+      <p class="mt-3 text-ink-500 dark:text-ink-300">{% translate "Recibe los nuevos artículos de tecnología y seguridad en tu correo." %}</p>
+      {% include "includes/newsletter_form.html" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

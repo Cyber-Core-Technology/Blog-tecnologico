@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "홈"
+
+msgid "Artículos"
+msgstr "글"
+
+msgid "Ciberseguridad"
+msgstr "사이버 보안"
+
+msgid "Programación"
+msgstr "프로그래밍"
+
+msgid "Buscar…"
+msgstr "검색…"
+
+msgid "Buscar artículos…"
+msgstr "글 검색…"
+
+msgid "Cambiar tema"
+msgstr "테마 전환"
+
+msgid "Menú"
+msgstr "메뉴"
+
+msgid "Idioma"
+msgstr "언어"
+
+msgid "Explorar artículos"
+msgstr "글 둘러보기"
+
+msgid "Últimos artículos"
+msgstr "최신 글"
+
+msgid "Lo más reciente del blog."
+msgstr "블로그의 최신 소식."
+
+msgid "Ver todos"
+msgstr "모두 보기"
+
+msgid "No te pierdas nada"
+msgstr "아무것도 놓치지 마세요"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "최신 기술 및 보안 글을 이메일로 받아보세요."
+
+msgid "Suscribirme"
+msgstr "구독하기"
+
+msgid "Boletín"
+msgstr "뉴스레터"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "새 글을 이메일로 바로 받아보세요. 스팸 없음, 언제든 구독 취소."
+
+msgid "Explorar"
+msgstr "둘러보기"
+
+msgid "Todos los artículos"
+msgstr "모든 글"
+
+msgid "Todos"
+msgstr "전체"
+
+msgid "Suscripción RSS"
+msgstr "RSS 구독"
+
+msgid "Sin tracking de terceros"
+msgstr "제3자 추적 없음"
+
+msgid "Comentarios"
+msgstr "댓글"
+
+msgid "Deja un comentario"
+msgstr "댓글 남기기"
+
+msgid "Enviar comentario"
+msgstr "댓글 작성"
+
+msgid "Sé el primero en comentar."
+msgstr "첫 번째로 댓글을 남겨보세요."
+
+msgid "Se revisa antes de publicarse."
+msgstr "게시 전에 검토됩니다."
+
+msgid "Tu nombre"
+msgstr "이름"
+
+msgid "Escribe tu comentario…"
+msgstr "댓글을 입력하세요…"
+
+msgid "Sigue leyendo"
+msgstr "계속 읽기"
+
+msgid "Escrito por"
+msgstr "작성자"
+
+msgid "Volver al inicio"
+msgstr "홈으로 돌아가기"
+
+msgid "min de lectura"
+msgstr "분 분량"
+
+msgid "min"
+msgstr "분"
+

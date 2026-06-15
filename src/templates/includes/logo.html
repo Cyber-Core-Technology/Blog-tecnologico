@@ -1,0 +1,4 @@
+{% load static %}
+{# Isotipo CyCoTech (icono circular). Acepta `logo_class` para el tamaño. #}
+<img src="{% static 'img/logo-mark.png' %}" alt="CyCoTech Blog"
+     class="{{ logo_class|default:'h-9 w-9' }} select-none" draggable="false">

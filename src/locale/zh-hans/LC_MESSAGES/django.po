@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-hans\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "首页"
+
+msgid "Artículos"
+msgstr "文章"
+
+msgid "Ciberseguridad"
+msgstr "网络安全"
+
+msgid "Programación"
+msgstr "编程"
+
+msgid "Buscar…"
+msgstr "搜索…"
+
+msgid "Buscar artículos…"
+msgstr "搜索文章…"
+
+msgid "Cambiar tema"
+msgstr "切换主题"
+
+msgid "Menú"
+msgstr "菜单"
+
+msgid "Idioma"
+msgstr "语言"
+
+msgid "Explorar artículos"
+msgstr "浏览文章"
+
+msgid "Últimos artículos"
+msgstr "最新文章"
+
+msgid "Lo más reciente del blog."
+msgstr "博客最新内容。"
+
+msgid "Ver todos"
+msgstr "查看全部"
+
+msgid "No te pierdas nada"
+msgstr "不错过任何内容"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "在邮箱中接收最新的技术与安全文章。"
+
+msgid "Suscribirme"
+msgstr "订阅"
+
+msgid "Boletín"
+msgstr "邮件订阅"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "新文章直接发送到你的邮箱。无垃圾邮件，随时退订。"
+
+msgid "Explorar"
+msgstr "探索"
+
+msgid "Todos los artículos"
+msgstr "所有文章"
+
+msgid "Todos"
+msgstr "全部"
+
+msgid "Suscripción RSS"
+msgstr "RSS 订阅"
+
+msgid "Sin tracking de terceros"
+msgstr "无第三方追踪"
+
+msgid "Comentarios"
+msgstr "评论"
+
+msgid "Deja un comentario"
+msgstr "发表评论"
+
+msgid "Enviar comentario"
+msgstr "提交评论"
+
+msgid "Sé el primero en comentar."
+msgstr "成为第一个评论的人。"
+
+msgid "Se revisa antes de publicarse."
+msgstr "发布前会经过审核。"
+
+msgid "Tu nombre"
+msgstr "你的名字"
+
+msgid "Escribe tu comentario…"
+msgstr "写下你的评论…"
+
+msgid "Sigue leyendo"
+msgstr "继续阅读"
+
+msgid "Escrito por"
+msgstr "作者"
+
+msgid "Volver al inicio"
+msgstr "返回首页"
+
+msgid "min de lectura"
+msgstr "分钟阅读"
+
+msgid "min"
+msgstr "分钟"
+

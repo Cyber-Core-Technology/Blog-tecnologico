@@ -1,0 +1,116 @@
+# =============================================================================
+#  Blog Tecnológico — Orquestación de producción
+#
+#  - Nginx Proxy Manager (externo) llega a `web` por la red `proxy-network`.
+#  - postgres y redis quedan AISLADOS en la red interna `blog_internal`.
+#  - NINGÚN servicio publica puertos al host (sin `ports:`).
+# =============================================================================
+
+x-web-build: &web-build
+  build:
+    context: .
+    dockerfile: docker/web/Dockerfile
+    args:
+      REQ_FILE: requirements/production.txt
+  image: blog-tecnologico-web:latest
+  env_file: .env
+  restart: unless-stopped
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+
+services:
+  # --- Aplicación web (Gunicorn) -------------------------------------------
+  web:
+    <<: *web-build
+    container_name: blog_web
+    environment:
+      RUN_MIGRATIONS: "1"        # solo este servicio migra y recolecta estáticos
+    expose:
+      - "8000"                   # visible solo dentro de las redes Docker
+    networks:
+      - proxy-network            # alcanzable por NPM
+      - blog_internal            # acceso a postgres / redis
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; urllib.request.urlopen('http://127.0.0.1:8000/healthz/'); " ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+
+  # --- Celery worker --------------------------------------------------------
+  celery_worker:
+    <<: *web-build
+    container_name: blog_celery_worker
+    command: ["celery", "-A", "config", "worker", "--loglevel=info", "--concurrency=2"]
+    networks:
+      - blog_internal
+    healthcheck:
+      test: ["CMD", "celery", "-A", "config", "inspect", "ping", "-d", "celery@$$HOSTNAME"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # --- Celery beat (scheduler) ---------------------------------------------
+  celery_beat:
+    <<: *web-build
+    container_name: blog_celery_beat
+    command: ["celery", "-A", "config", "beat", "--loglevel=info",
+              "--scheduler", "django_celery_beat.schedulers:DatabaseScheduler"]
+    networks:
+      - blog_internal
+
+  # --- PostgreSQL -----------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: blog_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - blog_internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # --- Redis ----------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: blog_redis
+    restart: unless-stopped
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    networks:
+      - blog_internal
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  pgdata:
+  redisdata:
+
+networks:
+  # Red del Nginx Proxy Manager — ya existe en el host.
+  proxy-network:
+    external: true
+  # Red privada del stack — no expuesta a NPM ni al host.
+  # NO se marca `internal: true` porque web/celery necesitan salida a
+  # internet (S3 + SMTP). El aislamiento de postgres/redis se garantiza
+  # porque NO están en `proxy-network` y no publican puertos al host.
+  blog_internal:
+    driver: bridge

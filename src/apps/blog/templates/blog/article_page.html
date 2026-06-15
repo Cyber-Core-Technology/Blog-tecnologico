@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block og_type %}article{% endblock %}
+{% block og_image %}{% if page.cover_image %}{% image page.cover_image width-1200 as og %}<meta property="og:image" content="{{ og.full_url }}">{% else %}<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo-mark.png' %}">{% endif %}{% endblock %}
+
+{% block content %}
+{# Barra de progreso de lectura #}
+<div class="fixed inset-x-0 top-0 z-[55] h-1">
+  <div data-progress-bar class="h-full w-0 bg-gradient-to-r from-maroon-700 to-steel-600 transition-[width] duration-150"></div>
+</div>
+
+<article class="mx-auto max-w-3xl px-4 pt-10">
+  {# Migas + cabecera #}
+  <nav class="mb-6 flex items-center gap-1.5 text-xs text-ink-400">
+    <a href="/" class="hover:text-steel-600 dark:hover:text-steel-400">{% translate "Inicio" %}</a><span>/</span>
+    <a href="/blog/" class="hover:text-steel-600 dark:hover:text-steel-400">{% translate "Artículos" %}</a>
+    {% if page.category %}<span>/</span><a href="/blog/?categoria={{ page.category.slug }}" class="hover:text-steel-600 dark:hover:text-steel-400">{{ page.category.name }}</a>{% endif %}
+  </nav>
+
+  <header class="mb-8">
+    {% if page.category %}<a href="/blog/?categoria={{ page.category.slug }}" class="badge-maroon">{{ page.category.name }}</a>{% endif %}
+    <h1 class="mt-4 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-900 dark:text-white sm:text-5xl">{{ page.title }}</h1>
+    {% if page.excerpt %}<p class="mt-4 text-lg leading-relaxed text-ink-500 dark:text-ink-300">{{ page.excerpt }}</p>{% endif %}
+    <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-500 dark:text-ink-400">
+      {% if page.author %}
+        <span class="flex items-center gap-2">
+          {% if page.author.avatar %}{% image page.author.avatar fill-36x36 as av %}<img src="{{ av.url }}" alt="{{ page.author.name }}" class="h-8 w-8 rounded-full ring-2 ring-steel-500/20">{% else %}<span class="grid h-8 w-8 place-items-center rounded-full bg-steel-700 text-xs font-bold text-paper">{{ page.author.name|first|upper }}</span>{% endif %}
+          <span class="font-medium text-ink-700 dark:text-ink-200">{{ page.author.name }}</span>
+        </span><span>·</span>
+      {% endif %}
+      <time datetime="{{ page.date|date:'c' }}">{{ page.date|date:"d F Y" }}</time>
+      <span>·</span>
+      <span class="inline-flex items-center gap-1"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>{{ page.reading_time }} {% translate "min de lectura" %}</span>
+    </div>
+  </header>
+
+  {% if page.cover_image %}
+    {% image page.cover_image fill-1280x600 as cover %}
+    <img src="{{ cover.url }}" alt="{{ page.title }}" class="mb-10 aspect-[2/1] w-full rounded-2xl object-cover ring-1 ring-ink-200/60 dark:ring-ink-800">
+  {% endif %}
+
+  {# Cuerpo (StreamField) #}
+  <div class="prose prose-lg prose-ink max-w-none dark:prose-invert
+              prose-headings:font-display prose-headings:scroll-mt-28 prose-headings:font-bold
+              prose-a:font-medium prose-a:text-steel-600 prose-a:no-underline hover:prose-a:underline dark:prose-a:text-steel-400
+              prose-strong:text-ink-900 dark:prose-strong:text-white
+              prose-blockquote:border-maroon-600 prose-blockquote:text-ink-600 dark:prose-blockquote:text-ink-300
+              prose-code:rounded prose-code:bg-ink-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[0.85em] prose-code:font-medium prose-code:text-maroon-700 prose-code:before:content-[''] prose-code:after:content-[''] dark:prose-code:bg-ink-800 dark:prose-code:text-maroon-300
+              prose-pre:bg-transparent prose-pre:p-0
+              prose-img:rounded-xl">
+    {% for block in page.body %}
+      {% if block.block_type == 'heading' %}
+        <h2>{{ block.value }}</h2>
+      {% else %}
+        {% include_block block %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {# Tags #}
+  {% if page.tags.all %}
+    <div class="mt-10 flex flex-wrap gap-2">
+      {% for tag in page.tags.all %}
+        <a href="/blog/?tag={{ tag.name|urlencode }}" class="badge-ink hover:bg-ink-200 dark:hover:bg-ink-700">#{{ tag.name }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <hr class="rule-brand my-10">
+
+  {# Autor #}
+  {% if page.author and page.author.bio %}
+    <aside class="card flex gap-4 p-6">
+      {% if page.author.avatar %}{% image page.author.avatar fill-64x64 as av2 %}<img src="{{ av2.url }}" alt="{{ page.author.name }}" class="h-16 w-16 shrink-0 rounded-full ring-2 ring-steel-500/20">{% else %}<span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-steel-700 text-xl font-bold text-paper">{{ page.author.name|first|upper }}</span>{% endif %}
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-400">{% translate "Escrito por" %}</p>
+        <p class="font-display text-lg font-bold text-ink-900 dark:text-white">{{ page.author.name }}</p>
+        <p class="mt-1 text-sm text-ink-500 dark:text-ink-400">{{ page.author.bio }}</p>
+      </div>
+    </aside>
+  {% endif %}
+</article>
+
+{# Comentarios #}
+{% if page.allow_comments %}
+  <section class="mx-auto max-w-3xl px-4 py-12">
+    <h2 class="mb-6 flex items-center gap-2 font-display text-xl font-bold text-ink-900 dark:text-white">
+      {% translate "Comentarios" %}
+      <span class="badge-ink">{{ page.approved_comments.count }}</span>
+    </h2>
+
+    {% include "comments/_thread.html" with comments=page.approved_comments %}
+
+    <div id="comment-form-wrapper" class="card mt-8 p-6">
+      <h3 class="mb-4 font-display font-bold text-ink-900 dark:text-white">{% translate "Deja un comentario" %}</h3>
+      {% include "comments/_form.html" with article=page %}
+    </div>
+  </section>
+{% endif %}
+
+{# Relacionados #}
+{% if related %}
+  <section class="mx-auto max-w-6xl px-4 pb-16">
+    <h2 class="mb-6 font-display text-xl font-bold text-ink-900 dark:text-white">{% translate "Sigue leyendo" %}</h2>
+    <div class="grid gap-6 sm:grid-cols-3">
+      {% for article in related %}{% include "blog/_article_card.html" with article=article %}{% endfor %}
+    </div>
+  </section>
+{% endif %}
+{% endblock %}

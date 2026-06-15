@@ -1,0 +1,16 @@
+{
+  "name": "blog-tecnologico-tailwind",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Compilación de CSS (Tailwind v4) para el Blog Tecnológico",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o /src/static/css/app.css --minify",
+    "build:local": "tailwindcss -i ./src/input.css -o ../src/static/css/app.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ../src/static/css/app.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "tailwindcss": "^4.0.0"
+  }
+}

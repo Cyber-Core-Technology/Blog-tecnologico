@@ -1,0 +1,17 @@
+# =============================================================================
+#  Dependencias de desarrollo
+# =============================================================================
+-r base.txt
+
+# Debugging
+django-debug-toolbar==4.4.6
+django-extensions==3.2.3
+ipython==8.30.0
+
+# Calidad de código
+ruff==0.8.4
+
+# Tests
+pytest==8.3.4
+pytest-django==4.9.0
+factory-boy==3.3.1

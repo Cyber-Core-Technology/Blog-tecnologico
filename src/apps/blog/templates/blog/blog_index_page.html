@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags i18n %}
+
+{% block content %}
+<div class="mx-auto max-w-6xl px-4 py-12">
+  {# Cabecera #}
+  <header class="mb-8 max-w-2xl">
+    <span class="badge-steel mb-3 inline-flex">Blog</span>
+    <h1 class="font-display text-3xl font-extrabold tracking-tight text-ink-900 dark:text-white sm:text-4xl">{{ page.title }}</h1>
+    {% if page.intro %}<p class="mt-3 text-lg text-ink-500 dark:text-ink-300">{{ page.intro }}</p>{% endif %}
+  </header>
+
+  {# Filtros + búsqueda #}
+  <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex flex-wrap items-center gap-2">
+      <a href="/blog/" class="{% if not active_category %}chip-on{% else %}chip-off{% endif %}">{% translate "Todos" %}</a>
+      {% for cat in categories %}
+        <a href="/blog/?categoria={{ cat.slug }}" class="{% if active_category == cat.slug %}chip-on{% else %}chip-off{% endif %}">{{ cat.name }}</a>
+      {% endfor %}
+    </div>
+    <form action="/blog/" method="get" class="relative sm:w-64">
+      <svg class="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+      <input type="search" name="q" value="{{ search_query }}" placeholder="{% translate 'Buscar artículos…' %}" class="input ps-9">
+    </form>
+  </div>
+
+  {% if search_query %}
+    <p class="mb-6 text-sm text-ink-500 dark:text-ink-400">Resultados para «<span class="font-semibold text-ink-800 dark:text-ink-200">{{ search_query }}</span>»</p>
+  {% endif %}
+
+  {# Grid #}
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {% for article in articles %}
+      {% include "blog/_article_card.html" with article=article %}
+    {% empty %}
+      <div class="surface col-span-full flex flex-col items-center gap-3 px-6 py-16 text-center">
+        {% include "includes/logo.html" with logo_class="h-12 w-12 opacity-60" %}
+        <p class="text-ink-500 dark:text-ink-400">No se encontraron artículos{% if search_query %} para esa búsqueda{% endif %}.</p>
+        {% if search_query or active_category %}<a href="/blog/" class="btn-ghost mt-2">Ver todos</a>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {# Paginación #}
+  {% if articles.has_other_pages %}
+    <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Paginación">
+      {% if articles.has_previous %}
+        <a href="?page={{ articles.previous_page_number }}{% if active_category %}&categoria={{ active_category }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="btn-ghost">← Anterior</a>
+      {% endif %}
+      <span class="px-4 text-sm text-ink-500 dark:text-ink-400">Página {{ articles.number }} de {{ articles.paginator.num_pages }}</span>
+      {% if articles.has_next %}
+        <a href="?page={{ articles.next_page_number }}{% if active_category %}&categoria={{ active_category }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="btn-ghost">Siguiente →</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+</div>
+{% endblock %}

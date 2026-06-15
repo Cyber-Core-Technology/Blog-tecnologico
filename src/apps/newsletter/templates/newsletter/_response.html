@@ -1,0 +1,11 @@
+{% if success %}
+  <p class="mt-4 flex items-center gap-2 rounded-xl border border-steel-500/30 bg-steel-500/10 px-4 py-3 text-sm text-steel-700 dark:text-steel-300">
+    <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    {{ success }}
+  </p>
+{% elif error %}
+  <p class="mt-4 flex items-center gap-2 rounded-xl border border-maroon-500/40 bg-maroon-500/10 px-4 py-3 text-sm text-maroon-700 dark:text-maroon-300">
+    <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.5 0L3.16 16.25A2 2 0 005 19z"/></svg>
+    {{ error }}
+  </p>
+{% endif %}

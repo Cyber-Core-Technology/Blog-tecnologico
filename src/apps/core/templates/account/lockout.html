@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Acceso bloqueado{% endblock %}
+{% block content %}
+<section class="mx-auto flex max-w-md flex-col items-center px-4 py-24 text-center">
+  <div class="mb-6 grid h-16 w-16 place-items-center rounded-2xl bg-maroon-500/15 text-maroon-500">
+    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+  </div>
+  <h1 class="font-display text-2xl font-bold text-ink-900 dark:text-white">Acceso bloqueado temporalmente</h1>
+  <p class="mt-4 text-ink-500 dark:text-ink-400">Demasiados intentos fallidos de inicio de sesión. Por seguridad, inténtalo de nuevo más tarde.</p>
+</section>
+{% endblock %}

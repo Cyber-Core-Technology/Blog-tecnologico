@@ -1,0 +1,65 @@
+{% load wagtailcore_tags i18n %}
+<footer class="mt-20 border-t border-ink-200/70 bg-paper-muted/40 dark:border-ink-800/70 dark:bg-ink-900/40">
+  <div class="mx-auto max-w-6xl px-4 py-14">
+    <div class="grid gap-10 md:grid-cols-12">
+      {# Marca + descripción #}
+      <div class="md:col-span-5">
+        <a href="{{ nav_home_url }}" class="flex items-center gap-2.5">
+          {% include "includes/logo.html" with logo_class="h-10 w-10" %}
+          <span class="font-display text-xl font-bold tracking-tight text-ink-900 dark:text-white">CyCo<span class="text-steel-600 dark:text-steel-400">Tech</span> <span class="text-ink-400">Blog</span></span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          {{ settings.core.SiteSettings.tagline|default:"Programación, ciberseguridad y DevOps explicados sin rodeos. Contenido propio, sin tracking de terceros." }}
+        </p>
+        <div class="mt-5 flex gap-2">
+          {% if settings.core.SiteSettings.github_url %}
+            <a href="{{ settings.core.SiteSettings.github_url }}" rel="noopener" aria-label="GitHub" class="grid h-9 w-9 place-items-center rounded-lg border border-ink-200 text-ink-500 transition hover:border-steel-400 hover:text-steel-600 dark:border-ink-700 dark:text-ink-400 dark:hover:text-steel-400">
+              <svg class="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg>
+            </a>
+          {% endif %}
+          {% if settings.core.SiteSettings.twitter_url %}
+            <a href="{{ settings.core.SiteSettings.twitter_url }}" rel="noopener" aria-label="Twitter / X" class="grid h-9 w-9 place-items-center rounded-lg border border-ink-200 text-ink-500 transition hover:border-steel-400 hover:text-steel-600 dark:border-ink-700 dark:text-ink-400 dark:hover:text-steel-400">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3L17.61 20.65z"/></svg>
+            </a>
+          {% endif %}
+          {% if settings.core.SiteSettings.mastodon_url %}
+            <a href="{{ settings.core.SiteSettings.mastodon_url }}" rel="me noopener" aria-label="Mastodon" class="grid h-9 w-9 place-items-center rounded-lg border border-ink-200 text-ink-500 transition hover:border-steel-400 hover:text-steel-600 dark:border-ink-700 dark:text-ink-400 dark:hover:text-steel-400">
+              <svg class="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.33 8.08c0-4.7-3.08-6.08-3.08-6.08C16.7 1.29 14.04 1 11.28 1h-.07C8.45 1 5.8 1.29 4.24 2 4.24 2 1.16 3.38 1.16 8.08c0 1.08-.02 2.37.01 3.74.11 4.62.84 9.17 5.1 10.3 1.97.52 3.66.63 5.02.55 2.47-.13 3.85-.87 3.85-.87l-.08-1.79s-1.76.55-3.74.49c-1.96-.07-4.03-.21-4.35-2.62a4.9 4.9 0 01-.04-.67s1.93.47 4.37.58c1.5.07 2.9-.09 4.32-.25 2.73-.33 5.1-2.01 5.4-3.55.47-2.42.43-5.91.43-5.91zM18.1 13.6h-2v-4.9c0-1.04-.44-1.56-1.3-1.56-.96 0-1.44.62-1.44 1.84v2.67h-2V8.98c0-1.22-.48-1.84-1.44-1.84-.87 0-1.3.52-1.3 1.56v4.9h-2V8.55c0-1.04.27-1.86.8-2.47.55-.6 1.26-.92 2.15-.92 1.03 0 1.8.4 2.32 1.18l.5.84.5-.84c.5-.79 1.28-1.18 2.31-1.18.89 0 1.6.31 2.15.92.53.6.8 1.43.8 2.47v5.05z"/></svg>
+            </a>
+          {% endif %}
+          <a href="/feed/" aria-label="RSS" class="grid h-9 w-9 place-items-center rounded-lg border border-ink-200 text-ink-500 transition hover:border-steel-400 hover:text-steel-600 dark:border-ink-700 dark:text-ink-400 dark:hover:text-steel-400">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4 11a9 9 0 019 9h2.5A11.5 11.5 0 004 8.5V11zm0 4a5 5 0 015 5h2.5A7.5 7.5 0 004 12.5V15zm1.5 3a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      {# Navegación #}
+      <div class="md:col-span-3">
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-ink-400">{% translate "Explorar" %}</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="{{ nav_blog_url }}" class="text-ink-600 transition hover:text-steel-600 dark:text-ink-300 dark:hover:text-steel-400">{% translate "Todos los artículos" %}</a></li>
+          <li><a href="{{ nav_blog_url }}?categoria=ciberseguridad" class="text-ink-600 transition hover:text-steel-600 dark:text-ink-300 dark:hover:text-steel-400">{% translate "Ciberseguridad" %}</a></li>
+          <li><a href="{{ nav_blog_url }}?categoria=programacion" class="text-ink-600 transition hover:text-steel-600 dark:text-ink-300 dark:hover:text-steel-400">{% translate "Programación" %}</a></li>
+          <li><a href="/feed/" class="text-ink-600 transition hover:text-steel-600 dark:text-ink-300 dark:hover:text-steel-400">{% translate "Suscripción RSS" %}</a></li>
+        </ul>
+      </div>
+
+      {# Newsletter #}
+      <div class="md:col-span-4">
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-ink-400">{% translate "Boletín" %}</h3>
+        <p class="mt-4 text-sm text-ink-500 dark:text-ink-400">{% translate "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras." %}</p>
+        {% include "includes/newsletter_form.html" %}
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink-200/70 pt-6 text-xs text-ink-400 dark:border-ink-800/70 sm:flex-row">
+      <p>© {% now "Y" %} CyCoTech Blog · Construido con Django + Wagtail.</p>
+      <p class="flex items-center gap-1.5">
+        <span class="h-2 w-2 rounded-full bg-maroon-600"></span>
+        <span class="h-2 w-2 rounded-full bg-paper-muted dark:bg-ink-200"></span>
+        <span class="h-2 w-2 rounded-full bg-steel-600"></span>
+        <span class="ml-1">{% translate "Sin tracking de terceros" %}</span>
+      </p>
+    </div>
+  </div>
+</footer>

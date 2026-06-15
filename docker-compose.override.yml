@@ -1,0 +1,49 @@
+# =============================================================================
+#  Override de DESARROLLO (se aplica automáticamente con `docker compose up`)
+#
+#  - Monta el código para hot-reload.
+#  - Usa el runserver de Django con DEBUG.
+#  - Publica el puerto 8000 al host SOLO en local (cómodo sin NPM).
+#  - Construye con requirements de dev (debug toolbar, etc.).
+#
+#  En el VPS, despliega con:
+#    docker compose -f docker-compose.yml up -d --build
+#  para IGNORAR este override.
+# =============================================================================
+
+services:
+  web:
+    # Tag propio de dev para que el build de producción (:latest) no lo pise.
+    image: blog-tecnologico-web:dev
+    build:
+      args:
+        REQ_FILE: requirements/dev.txt
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      DJANGO_DEBUG: "True"
+      RUN_MIGRATIONS: "1"
+    volumes:
+      - ./src:/app
+    ports:
+      - "127.0.0.1:8000:8000"   # solo loopback del host
+
+  celery_worker:
+    image: blog-tecnologico-web:dev
+    build:
+      args:
+        REQ_FILE: requirements/dev.txt
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+    volumes:
+      - ./src:/app
+
+  celery_beat:
+    image: blog-tecnologico-web:dev
+    build:
+      args:
+        REQ_FILE: requirements/dev.txt
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+    volumes:
+      - ./src:/app

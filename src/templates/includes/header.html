@@ -1,0 +1,67 @@
+{% load i18n i18n_extras %}
+<header class="sticky top-0 z-50 border-b border-ink-200/60 bg-paper/70 backdrop-blur-xl dark:border-ink-800/70 dark:bg-ink-950/70">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+    {# Marca #}
+    <a href="{{ nav_home_url }}" class="group flex items-center gap-2.5">
+      {% include "includes/logo.html" with logo_class="h-9 w-9 transition group-hover:scale-105" %}
+      <span class="flex items-center gap-1.5">
+        <span class="font-display text-lg font-bold leading-none tracking-tight text-ink-900 dark:text-white">
+          CyCo<span class="text-steel-600 dark:text-steel-400">Tech</span>
+        </span>
+        <span class="hidden rounded-md border border-ink-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink-400 dark:border-ink-700 sm:inline-block">Blog</span>
+      </span>
+    </a>
+
+    {# Navegación desktop #}
+    <div class="hidden items-center gap-1 md:flex">
+      <a href="{{ nav_home_url }}" class="nav-link">{% translate "Inicio" %}</a>
+      <a href="{{ nav_blog_url }}" class="nav-link">{% translate "Artículos" %}</a>
+      <a href="{{ nav_blog_url }}?categoria=ciberseguridad" class="nav-link">{% translate "Ciberseguridad" %}</a>
+      <a href="{{ nav_blog_url }}?categoria=programacion" class="nav-link">{% translate "Programación" %}</a>
+    </div>
+
+    {# Acciones #}
+    <div class="flex items-center gap-1">
+      <form action="{{ nav_blog_url }}" method="get" class="hidden lg:block">
+        <div class="relative">
+          <svg class="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+          <input type="search" name="q" placeholder="{% translate 'Buscar…' %}"
+                 class="w-40 rounded-xl border border-ink-200 bg-white/70 py-2 ps-9 pe-3 text-sm text-ink-900 placeholder-ink-400 transition focus:w-52 focus:border-steel-500 focus:outline-none focus:ring-2 focus:ring-steel-500/30 dark:border-ink-700 dark:bg-ink-900/70 dark:text-ink-100">
+        </div>
+      </form>
+
+      {# Selector de idioma (consciente de la página actual) #}
+      {% language_switcher %}
+
+      {# Toggle de tema (toggleTheme() global; iconos por CSS) #}
+      <button data-theme-toggle type="button" aria-label="{% translate 'Cambiar tema' %}"
+              class="grid h-9 w-9 place-items-center rounded-xl text-ink-500 transition hover:bg-ink-100 hover:text-ink-800 dark:text-ink-400 dark:hover:bg-ink-800 dark:hover:text-white">
+        {# Luna: visible en claro (para pasar a oscuro) #}
+        <svg class="h-5 w-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        {# Sol: visible en oscuro (para pasar a claro) #}
+        <svg class="hidden h-5 w-5 dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+
+      {# Botón menú móvil #}
+      <button data-menu-toggle type="button" aria-label="{% translate 'Menú' %}"
+              class="grid h-9 w-9 place-items-center rounded-xl text-ink-600 hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-ink-800 md:hidden">
+        <svg data-icon-open class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg data-icon-close class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  {# Menú móvil #}
+  <div data-menu class="hidden border-t border-ink-200/60 px-4 py-3 dark:border-ink-800/70 md:hidden">
+    <div class="flex flex-col gap-1">
+      <a href="{{ nav_home_url }}" class="nav-link">{% translate "Inicio" %}</a>
+      <a href="{{ nav_blog_url }}" class="nav-link">{% translate "Artículos" %}</a>
+      <a href="{{ nav_blog_url }}?categoria=ciberseguridad" class="nav-link">{% translate "Ciberseguridad" %}</a>
+      <a href="{{ nav_blog_url }}?categoria=programacion" class="nav-link">{% translate "Programación" %}</a>
+      <form action="{{ nav_blog_url }}" method="get" class="mt-2">
+        <input type="search" name="q" placeholder="{% translate 'Buscar artículos…' %}" class="input">
+      </form>
+    </div>
+  </div>
+  <div class="rule-brand"></div>
+</header>

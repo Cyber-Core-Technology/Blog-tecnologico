@@ -1,0 +1,28 @@
+{% load wagtailcore_tags %}
+{% with s=value.style %}
+<aside class="not-prose my-7 flex gap-3 rounded-xl border p-4
+  {% if s == 'info' %}border-steel-500/30 bg-steel-500/10{% endif %}
+  {% if s == 'success' %}border-emerald-500/30 bg-emerald-500/10{% endif %}
+  {% if s == 'warning' %}border-amber-500/30 bg-amber-500/10{% endif %}
+  {% if s == 'danger' %}border-maroon-500/40 bg-maroon-500/10{% endif %}">
+  <div class="mt-0.5 shrink-0
+    {% if s == 'info' %}text-steel-500{% endif %}
+    {% if s == 'success' %}text-emerald-500{% endif %}
+    {% if s == 'warning' %}text-amber-500{% endif %}
+    {% if s == 'danger' %}text-maroon-500{% endif %}">
+    {% if s == 'danger' %}
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.5 0L3.16 16.25A2 2 0 005 19z"/></svg>
+    {% elif s == 'success' %}
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    {% elif s == 'warning' %}
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.5 0L3.16 16.25A2 2 0 005 19z"/></svg>
+    {% else %}
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    {% endif %}
+  </div>
+  <div>
+    {% if value.title %}<p class="mb-1 font-semibold text-ink-900 dark:text-white">{{ value.title }}</p>{% endif %}
+    <div class="text-sm leading-relaxed text-ink-600 dark:text-ink-300 [&_a]:text-steel-600 dark:[&_a]:text-steel-400">{{ value.body|richtext }}</div>
+  </div>
+</aside>
+{% endwith %}

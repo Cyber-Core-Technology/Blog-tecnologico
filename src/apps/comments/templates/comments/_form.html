@@ -1,0 +1,35 @@
+{% load i18n %}
+<form
+  hx-post="{% url 'comments:post' article.id %}"
+  hx-target="#comment-form-wrapper"
+  hx-swap="innerHTML"
+  class="space-y-4"
+>
+  {% csrf_token %}
+  <input type="hidden" name="parent" value="">
+
+  {# Honeypot #}
+  <div class="hidden" aria-hidden="true">
+    <label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <input type="text" name="author_name" maxlength="80" required placeholder="{% translate 'Tu nombre' %}" class="input">
+    <input type="email" name="author_email" required placeholder="{% translate 'tu@correo.com (no se publica)' %}" class="input">
+  </div>
+  <textarea name="body" rows="4" maxlength="3000" required placeholder="{% translate 'Escribe tu comentario…' %}" class="input resize-y"></textarea>
+
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <p class="inline-flex items-center gap-1.5 text-xs text-ink-400">
+      <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      {% translate "Se revisa antes de publicarse." %}
+    </p>
+    <button type="submit" class="btn-primary">
+      <span class="htmx-indicator-hide">{% translate "Enviar comentario" %}</span>
+      <span class="htmx-indicator items-center gap-2">
+        <svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.4 0 0 5.4 0 12h4z"/></svg>
+        Enviando…
+      </span>
+    </button>
+  </div>
+</form>

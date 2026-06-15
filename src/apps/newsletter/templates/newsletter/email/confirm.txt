@@ -1,0 +1,12 @@
+Confirma tu suscripción al CyCoTech Blog
+
+Hola,
+
+Recibimos una solicitud para suscribir esta dirección ({{ email }}) a nuestro
+boletín. Para confirmarla, visita el siguiente enlace:
+
+{{ confirm_url }}
+
+Si no fuiste tú, simplemente ignora este mensaje.
+
+— CyCoTech Blog

@@ -1,0 +1,39 @@
+{% load i18n %}
+{% if comments %}
+  <ul class="space-y-4">
+    {% for comment in comments %}
+      <li class="card p-5">
+        <div class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-maroon-700 to-steel-700 text-sm font-bold text-paper">{{ comment.author_name|first|upper }}</span>
+          <div>
+            <p class="font-semibold text-ink-900 dark:text-white">{{ comment.author_name }}</p>
+            <time class="text-xs text-ink-400" datetime="{{ comment.created_at|date:'c' }}">{{ comment.created_at|date:"d M Y, H:i" }}</time>
+          </div>
+        </div>
+        <p class="mt-3 whitespace-pre-line leading-relaxed text-ink-700 dark:text-ink-300">{{ comment.body }}</p>
+
+        {% with replies=comment.approved_replies %}
+          {% if replies %}
+            <ul class="mt-4 space-y-3 border-l-2 border-steel-500/30 pl-5">
+              {% for reply in replies %}
+                <li>
+                  <div class="flex items-center gap-2">
+                    <span class="grid h-7 w-7 place-items-center rounded-full bg-steel-700 text-xs font-bold text-paper">{{ reply.author_name|first|upper }}</span>
+                    <span class="font-medium text-ink-900 dark:text-white">{{ reply.author_name }}</span>
+                    <time class="text-xs text-ink-400" datetime="{{ reply.created_at|date:'c' }}">{{ reply.created_at|date:"d M Y" }}</time>
+                  </div>
+                  <p class="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-ink-700 dark:text-ink-300">{{ reply.body }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="surface flex flex-col items-center gap-2 px-6 py-10 text-center">
+    <svg class="h-8 w-8 text-ink-300 dark:text-ink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 01-9 9c-1.6 0-3.1-.4-4.4-1.1L3 21l1.1-4.6A9 9 0 1121 12z"/></svg>
+    <p class="text-ink-500 dark:text-ink-400">{% translate "Sé el primero en comentar." %}</p>
+  </div>
+{% endif %}

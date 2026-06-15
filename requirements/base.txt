@@ -1,0 +1,48 @@
+# =============================================================================
+#  Dependencias base — compartidas entre dev y producción
+#  Stack alineado: Django 5.2 LTS + Wagtail 7.4 + wagtail-2fa.
+# =============================================================================
+
+# --- Core ---
+Django==5.2.6
+wagtail==7.4.1
+wagtail-localize==1.13.1           # traducción de contenido (con DeepL)
+
+# --- Base de datos ---
+psycopg[binary]==3.2.13
+
+# --- Cache / sesiones / Celery broker ---
+redis==5.2.1
+hiredis==3.1.0
+django-redis==5.4.0
+
+# --- Tareas async ---
+celery==5.5.3
+django-celery-beat==2.8.1
+
+# --- Servidor de aplicación ---
+gunicorn==23.0.0
+
+# --- Static files ---
+whitenoise[brotli]==6.8.2
+
+# --- Media en S3 ---
+django-storages==1.14.6
+boto3==1.35.81
+
+# --- Configuración por entorno ---
+django-environ==0.12.0
+
+# --- Seguridad ---
+django-axes==7.0.2                 # bloqueo por fuerza bruta
+django-csp==3.8                    # Content-Security-Policy (API CSP_* clásica)
+django-otp==1.7.0                  # one-time-password (base 2FA)
+wagtail-2fa==1.8.0                 # fuerza 2FA (TOTP) en el admin de Wagtail
+qrcode==7.4.2                      # generación de QR para el enrolamiento TOTP
+argon2-cffi==23.1.0                # hasher de contraseñas Argon2
+
+# --- Syntax highlighting (server-side) ---
+Pygments==2.18.0
+
+# --- Imágenes (Wagtail) ---
+Pillow==11.0.0

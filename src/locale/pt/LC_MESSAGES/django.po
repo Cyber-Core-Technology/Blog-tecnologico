@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Início"
+
+msgid "Artículos"
+msgstr "Artigos"
+
+msgid "Ciberseguridad"
+msgstr "Cibersegurança"
+
+msgid "Programación"
+msgstr "Programação"
+
+msgid "Buscar…"
+msgstr "Pesquisar…"
+
+msgid "Buscar artículos…"
+msgstr "Pesquisar artigos…"
+
+msgid "Cambiar tema"
+msgstr "Mudar tema"
+
+msgid "Menú"
+msgstr "Menu"
+
+msgid "Idioma"
+msgstr "Idioma"
+
+msgid "Explorar artículos"
+msgstr "Explorar artigos"
+
+msgid "Últimos artículos"
+msgstr "Últimos artigos"
+
+msgid "Lo más reciente del blog."
+msgstr "O mais recente do blog."
+
+msgid "Ver todos"
+msgstr "Ver todos"
+
+msgid "No te pierdas nada"
+msgstr "Não perca nada"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "Receba os novos artigos de tecnologia e segurança no seu e-mail."
+
+msgid "Suscribirme"
+msgstr "Inscrever-me"
+
+msgid "Boletín"
+msgstr "Newsletter"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "Novos artigos direto no seu e-mail. Sem spam, cancele quando quiser."
+
+msgid "Explorar"
+msgstr "Explorar"
+
+msgid "Todos los artículos"
+msgstr "Todos os artigos"
+
+msgid "Todos"
+msgstr "Todos"
+
+msgid "Suscripción RSS"
+msgstr "Assinatura RSS"
+
+msgid "Sin tracking de terceros"
+msgstr "Sem rastreamento de terceiros"
+
+msgid "Comentarios"
+msgstr "Comentários"
+
+msgid "Deja un comentario"
+msgstr "Deixe um comentário"
+
+msgid "Enviar comentario"
+msgstr "Enviar comentário"
+
+msgid "Sé el primero en comentar."
+msgstr "Seja o primeiro a comentar."
+
+msgid "Se revisa antes de publicarse."
+msgstr "Revisado antes de publicar."
+
+msgid "Tu nombre"
+msgstr "Seu nome"
+
+msgid "Escribe tu comentario…"
+msgstr "Escreva seu comentário…"
+
+msgid "Sigue leyendo"
+msgstr "Continue lendo"
+
+msgid "Escrito por"
+msgstr "Escrito por"
+
+msgid "Volver al inicio"
+msgstr "Voltar ao início"
+
+msgid "min de lectura"
+msgstr "min de leitura"
+
+msgid "min"
+msgstr "min"
+

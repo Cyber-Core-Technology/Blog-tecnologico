@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Главная"
+
+msgid "Artículos"
+msgstr "Статьи"
+
+msgid "Ciberseguridad"
+msgstr "Кибербезопасность"
+
+msgid "Programación"
+msgstr "Программирование"
+
+msgid "Buscar…"
+msgstr "Поиск…"
+
+msgid "Buscar artículos…"
+msgstr "Поиск статей…"
+
+msgid "Cambiar tema"
+msgstr "Сменить тему"
+
+msgid "Menú"
+msgstr "Меню"
+
+msgid "Idioma"
+msgstr "Язык"
+
+msgid "Explorar artículos"
+msgstr "Смотреть статьи"
+
+msgid "Últimos artículos"
+msgstr "Последние статьи"
+
+msgid "Lo más reciente del blog."
+msgstr "Самое свежее в блоге."
+
+msgid "Ver todos"
+msgstr "Смотреть все"
+
+msgid "No te pierdas nada"
+msgstr "Не пропустите ничего"
+
+msgid "Recibe los nuevos artículos de tecnología y seguridad en tu correo."
+msgstr "Получайте новые статьи о технологиях и безопасности на почту."
+
+msgid "Suscribirme"
+msgstr "Подписаться"
+
+msgid "Boletín"
+msgstr "Рассылка"
+
+msgid "Nuevos artículos directo a tu correo. Sin spam, baja cuando quieras."
+msgstr "Новые статьи прямо на почту. Без спама, отписка в любой момент."
+
+msgid "Explorar"
+msgstr "Обзор"
+
+msgid "Todos los artículos"
+msgstr "Все статьи"
+
+msgid "Todos"
+msgstr "Все"
+
+msgid "Suscripción RSS"
+msgstr "RSS-подписка"
+
+msgid "Sin tracking de terceros"
+msgstr "Без стороннего отслеживания"
+
+msgid "Comentarios"
+msgstr "Комментарии"
+
+msgid "Deja un comentario"
+msgstr "Оставить комментарий"
+
+msgid "Enviar comentario"
+msgstr "Отправить комментарий"
+
+msgid "Sé el primero en comentar."
+msgstr "Будьте первым, кто оставит комментарий."
+
+msgid "Se revisa antes de publicarse."
+msgstr "Проверяется перед публикацией."
+
+msgid "Tu nombre"
+msgstr "Ваше имя"
+
+msgid "Escribe tu comentario…"
+msgstr "Напишите комментарий…"
+
+msgid "Sigue leyendo"
+msgstr "Читать дальше"
+
+msgid "Escrito por"
+msgstr "Автор"
+
+msgid "Volver al inicio"
+msgstr "На главную"
+
+msgid "min de lectura"
+msgstr "мин чтения"
+
+msgid "min"
+msgstr "мин"
+
