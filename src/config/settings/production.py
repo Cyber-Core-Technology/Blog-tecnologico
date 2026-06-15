@@ -16,6 +16,12 @@ DEBUG = False
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
+
+# El healthcheck del contenedor llega por HTTP a 127.0.0.1 (sin pasar por NPM).
+# Permitimos ese host interno y eximimos /healthz/ de la redirección a HTTPS,
+# para que el chequeo reciba 200 y el contenedor quede "healthy".
+ALLOWED_HOSTS = list(ALLOWED_HOSTS) + ["127.0.0.1", "localhost"]  # noqa: F405
+SECURE_REDIRECT_EXEMPT = [r"^healthz/$"]
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = False  # necesario si HTMX necesita leer el token vía JS
