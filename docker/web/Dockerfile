@@ -72,6 +72,12 @@ COPY --from=tailwind --chown=appuser:appuser /src/static/css/app.css /app/static
 COPY --chown=appuser:appuser docker/web/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+# Directorios escribibles por appuser (collectstatic / media local).
+# /app lo crea WORKDIR como root, por eso hay que dar propiedad a appuser:
+# sin esto, collectstatic falla con PermissionError en producción.
+RUN mkdir -p /app/staticfiles /app/mediafiles \
+    && chown -R appuser:appuser /app
+
 USER appuser
 
 EXPOSE 8000
