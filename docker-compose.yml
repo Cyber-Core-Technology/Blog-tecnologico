@@ -31,8 +31,11 @@ services:
     expose:
       - "8000"                   # visible solo dentro de las redes Docker
     networks:
-      - proxy-network            # alcanzable por NPM
-      - blog_internal            # acceso a postgres / redis
+      proxy-network:             # alcanzable por NPM
+        # IP fija para que NPM apunte a ella (su nginx no resuelve nombres de
+        # contenedor). Estable entre redeploys. Ajusta si tu subred difiere.
+        ipv4_address: 172.19.0.100
+      blog_internal: {}          # acceso a postgres / redis
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request,sys; urllib.request.urlopen('http://127.0.0.1:8000/healthz/'); " ]
       interval: 30s
